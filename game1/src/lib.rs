@@ -1,28 +1,29 @@
-use crate::interface::RPCiege5SwapCallbackTrait;
-use soroban_sdk::{contractimpl, contracttype, Address, Env};
+// use crate::interface::RPCiege5SwapCallbackTrait;
+// use soroban_sdk::{contractimpl, contracttype, Address, Env};
 
-pub struct RPCiege5SwapCallback;
+// pub struct RPCiege5SwapCallback;
 
-#[contracttype]
-pub enum DataKey {
-    LiquidityPool,
-}
+// #[contracttype]
+// pub enum DataKey {
+//     LiquidityPool,
+// }
 
-#[allow(unused_variables)]
-#[contractimpl]
-impl RPCiege5SwapCallbackTrait for RPCiege5SwapCallback {
-    fn swap_callback(
-        env:Env,
-        liqpool:Address,
-        token_id:Address,
-        amount:i128,
-        initiator:Option<Address>,
-    ) {
-        // no
-    }
+// #[allow(unused_variables)]
+// #[contractimpl]
+// impl RPCiege5SwapCallbackTrait for RPCiege5SwapCallback {
+//     fn swap_callback(
+//         env:Env,
+//         liqpool:Address,
+//         token_id:Address,
+//         amount:i128,
+//         initiator:Option<Address>,
+//     ) {
+//         // no
+//     }
     
-}
+// }
 
+// v1
 // #![no_std]
 // use soroban_sdk::{contractimpl, Address, Env};
 
@@ -32,6 +33,15 @@ impl RPCiege5SwapCallbackTrait for RPCiege5SwapCallback {
 // impl Contract {
 //     pub fn game_1(_env: Env, _nft_dest: Address) {}
 // }
+
+#![no_std]
+use soroban_sdk::{contract, contractimpl, Address, Env};
+#[contract]
+pub struct Contract ;
+#[contractimpl]
+impl Contract {
+ pub fn run(_env : Env, _nft_dest : Address) {}
+}
 
 // #![no_std]
 // use soroban_sdk::{contractimpl, Env, String, Address};

@@ -2,7 +2,7 @@
 resolver = "2"
 
 members = [
-    "rpci"
+    "game1"
 ]
 
 [profile.release]
@@ -15,5 +15,6 @@ panic = "abort"
 codegen-units = 1
 lto = true
 
-[workspace.dependencies.soroban-sdk]
-version = "0.8.4"
+[profile.release-with-logs]
+inherits = "release"
+debug-assertions = true
